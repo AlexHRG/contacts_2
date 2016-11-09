@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Контакты</string>
+    <string name="hello_world">Фсем превед!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="first_name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="mob_phone">Номер телефона</string>
+    <string name="email">e-mail</string>
+    <string name="birth_date">Дата рождения</string>
+    <string name="facebook_id">Facebook ID</string>
+    <string name="foto">Фото</string>
+    <string name="group">Группа</string>
+    <string name="add_contact">Добавить контакт</string>
+    <string name="fill_in">Заполнить</string>
+    <string name="del_all">Удалить все</string>
+    <string name="cancel">Отмена</string>
+    <string name="title_activity_editor">Экран редактирования</string>
+    <string name="delete">Удалить</string>
+    <string name="edit">Правка</string>
+    <string name="save">Сохранить</string>
+    <string name="exit">Выход</string>
+    <string name="to_main">На главную</string>
+    
+    <string name="location">Расположение</string>
+    <string name="cant_read_folder">папку невозможно открыть!</string>
+    <string name="nnew">Новый</string>
+    <string name="select">Выбрать</string>
+    <string name="file_name">Имя файла:</string>
+    <string name="create">Создать</string>
+    <string name="no_data">Нет данных</string>
+    <color name="gray">#ffff0000</color>
+    <string name="err">Ошибка</string>
+    <string name="choose_picture">Выбрать картинку</string>
+
+</resources>
