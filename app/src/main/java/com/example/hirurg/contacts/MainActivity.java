@@ -41,8 +41,8 @@ public class MainActivity extends ActionBarActivity {
 
         cursor = db.getAllData();
 //		startManagingCursor(cursor);
-        String[] from = new String[] { DB.COLUMN_FN, DB.COLUMN_LN };
-        int[] to = new int[] { R.id.listFN, R.id.listLN };
+        String[] from = new String[] { DB.COLUMN_FN, DB.COLUMN_LN, DB.COLUMN_PHONE };
+        int[] to = new int[] { R.id.listFN, R.id.listLN, R.id.listPhone};
         scAdapter = new SimpleCursorAdapter(this, R.layout.list, cursor, from,
                 to);
         listView.setAdapter(scAdapter);
@@ -77,7 +77,7 @@ public class MainActivity extends ActionBarActivity {
             itemToHide = menu.findItem(R.id.sort_by_last_name);
         }
         itemToHide.setVisible(false);
-        
+
         return true;
     }
 
