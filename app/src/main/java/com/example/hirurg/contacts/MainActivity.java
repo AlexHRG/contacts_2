@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -17,6 +16,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -33,10 +33,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "onCreate started");
         db = new DB(this);
         db.open();
-        Log.d(TAG, "onCreate db created");
         listView = (ListView) findViewById(android.R.id.list);
 
         cursor = db.getAllData();
@@ -65,7 +63,6 @@ public class MainActivity extends ActionBarActivity {
             }
 
         });
-        Log.d(TAG, "onCreate finished");
     }
 
     @Override
@@ -114,6 +111,16 @@ public class MainActivity extends ActionBarActivity {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
+        }
+        if (id == R.id.statistics) {
+            Cursor cursor = db.getStatistics();
+            cursor.moveToFirst();
+            String statistics = getResources().getString(R.string.contacts_count)
+                    + " "
+                    + cursor.getString(cursor.getColumnIndex("Count"));
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    statistics, Toast.LENGTH_SHORT);
+            toast.show();
         }
         return super.onOptionsItemSelected(item);
     }

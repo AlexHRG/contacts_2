@@ -16,4 +16,7 @@
     <item android:id="@+id/sort_by_first_name"
         android:title="@string/sortByFirstName"
         app:showAsAction="ifRoom" />
+    <item android:id="@+id/statistics"
+        android:title="@string/statistics"
+        app:showAsAction="ifRoom" />
 </menu>

@@ -35,5 +35,7 @@
     <string name="choose_picture">Выбрать картинку</string>
     <string name="sortByFirstName">Сортировать по имени</string>
     <string name="sortByLastName">Сортировать по фамилии</string>
+    <string name="statistics">Статистика</string>
+    <string name="contacts_count">Количество контактов</string>
 
 </resources>

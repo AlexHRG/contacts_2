@@ -53,8 +53,7 @@ public class DB {
     }
 
     public Cursor getAllData() {
-        String orderByColumn = (Properties.ORDER_BY == Properties.FIRST_NAME
-                ? COLUMN_FN : COLUMN_LN);
+        String orderByColumn = Properties.ORDER_BY == Properties.FIRST_NAME ? COLUMN_FN : COLUMN_LN;
         return mDB.query(TABLE_CONTACTS, null, null, null, null, null, orderByColumn);
     }
 
@@ -81,6 +80,11 @@ public class DB {
         } else {
             mDB.insert(TABLE_CONTACTS, null, cv);
         }
+    }
+
+    public Cursor getStatistics() {
+        String[] query = new String[] {"count (*) as Count"};
+        return mDB.query(TABLE_CONTACTS, query, null, null, null, null, null);
     }
 
     public void delRec(long id) {
