@@ -53,7 +53,7 @@ public class DB {
     }
 
     public Cursor getAllData() {
-        String orderByColumn = (Properties.properties.get(Properties.ORDER_BY) == Properties.FIRST_NAME
+        String orderByColumn = (Properties.ORDER_BY == Properties.FIRST_NAME
                 ? COLUMN_FN : COLUMN_LN);
         return mDB.query(TABLE_CONTACTS, null, null, null, null, null, orderByColumn);
     }

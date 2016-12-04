@@ -41,7 +41,9 @@ public class MainActivity extends ActionBarActivity {
 
         cursor = db.getAllData();
 //		startManagingCursor(cursor);
-        String[] from = new String[] { DB.COLUMN_FN, DB.COLUMN_LN, DB.COLUMN_PHONE };
+        String[] from = Properties.ORDER_BY == Properties.FIRST_NAME
+                ? new String[] { DB.COLUMN_FN, DB.COLUMN_LN, DB.COLUMN_PHONE }
+                : new String[] { DB.COLUMN_LN, DB.COLUMN_FN, DB.COLUMN_PHONE };
         int[] to = new int[] { R.id.listFN, R.id.listLN, R.id.listPhone};
         scAdapter = new SimpleCursorAdapter(this, R.layout.list, cursor, from,
                 to);
@@ -71,7 +73,7 @@ public class MainActivity extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         MenuItem itemToHide;
 
-        if (Properties.properties.get(Properties.ORDER_BY) == Properties.FIRST_NAME) {
+        if (Properties.ORDER_BY == Properties.FIRST_NAME) {
             itemToHide = menu.findItem(R.id.sort_by_first_name);
         } else {
             itemToHide = menu.findItem(R.id.sort_by_last_name);
@@ -102,13 +104,13 @@ public class MainActivity extends ActionBarActivity {
             startActivity(intent);
         }
         if (id == R.id.sort_by_first_name) {
-            Properties.properties.put(Properties.ORDER_BY, Properties.FIRST_NAME);
+            Properties.setOrderBy(Properties.FIRST_NAME);
             Intent intent = getIntent();
             finish();
             startActivity(intent);
         }
         if (id == R.id.sort_by_last_name) {
-            Properties.properties.put(Properties.ORDER_BY, Properties.LAST_NAME);
+            Properties.setOrderBy(Properties.LAST_NAME);
             Intent intent = getIntent();
             finish();
             startActivity(intent);
