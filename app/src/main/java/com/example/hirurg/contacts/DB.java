@@ -53,7 +53,9 @@ public class DB {
     }
 
     public Cursor getAllData() {
-        return mDB.query(TABLE_CONTACTS, null, null, null, null, null, null);
+        String orderByColumn = (Properties.properties.get(Properties.ORDER_BY) == Properties.FIRST_NAME
+                ? COLUMN_FN : COLUMN_LN);
+        return mDB.query(TABLE_CONTACTS, null, null, null, null, null, orderByColumn);
     }
 
     public Cursor getLine(long row_id) {

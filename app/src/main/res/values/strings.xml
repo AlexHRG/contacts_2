@@ -33,5 +33,7 @@
     <color name="gray">#ffff0000</color>
     <string name="err">Error</string>
     <string name="choose_picture">Choose picture</string>
+    <string name="sortByFirstName">Sort by first name</string>
+    <string name="sortByLastName">Sort by last name</string>
 
 </resources>

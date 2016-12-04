@@ -10,4 +10,10 @@
     <item android:id="@+id/del_all"
         android:title="@string/del_all"
         app:showAsAction="ifRoom" />
+    <item android:id="@+id/sort_by_last_name"
+        android:title="@string/sortByLastName"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/sort_by_first_name"
+        android:title="@string/sortByFirstName"
+        app:showAsAction="ifRoom" />
 </menu>

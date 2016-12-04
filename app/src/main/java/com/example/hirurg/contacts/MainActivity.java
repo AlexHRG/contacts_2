@@ -69,12 +69,22 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem itemToHide;
+
+        if (Properties.properties.get(Properties.ORDER_BY) == Properties.FIRST_NAME) {
+            itemToHide = menu.findItem(R.id.sort_by_first_name);
+        } else {
+            itemToHide = menu.findItem(R.id.sort_by_last_name);
+        }
+        itemToHide.setVisible(false);
+        
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
         if (id == R.id.add_contact) {
             Intent intent = new Intent(this, EditorActivity.class);
             startActivity(intent);
@@ -84,14 +94,24 @@ public class MainActivity extends ActionBarActivity {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
-
         }
         if (id == R.id.del_all) {
             db.deleteAll();
             Intent intent = getIntent();
             finish();
             startActivity(intent);
-
+        }
+        if (id == R.id.sort_by_first_name) {
+            Properties.properties.put(Properties.ORDER_BY, Properties.FIRST_NAME);
+            Intent intent = getIntent();
+            finish();
+            startActivity(intent);
+        }
+        if (id == R.id.sort_by_last_name) {
+            Properties.properties.put(Properties.ORDER_BY, Properties.LAST_NAME);
+            Intent intent = getIntent();
+            finish();
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

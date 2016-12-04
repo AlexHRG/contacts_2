@@ -33,5 +33,7 @@
     <color name="gray">#ffff0000</color>
     <string name="err">Ошибка</string>
     <string name="choose_picture">Выбрать картинку</string>
+    <string name="sortByFirstName">Сортировать по имени</string>
+    <string name="sortByLastName">Сортировать по фамилии</string>
 
 </resources>
