@@ -82,8 +82,7 @@ public class DB {
         }
     }
 
-    public Cursor getStatistics() {
-        String[] query = new String[] {"count (*) as Count"};
+    public Cursor getAgregatedData(String[] query) {
         return mDB.query(TABLE_CONTACTS, query, null, null, null, null, null);
     }
 

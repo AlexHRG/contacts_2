@@ -113,7 +113,8 @@ public class MainActivity extends ActionBarActivity {
             startActivity(intent);
         }
         if (id == R.id.statistics) {
-            Cursor cursor = db.getStatistics();
+            String[] query = new String[] {"count (*) as Count"};
+            Cursor cursor = db.getAgregatedData(query);
             cursor.moveToFirst();
             String statistics = getResources().getString(R.string.contacts_count)
                     + " "
